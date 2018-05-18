@@ -1,0 +1,201 @@
+/* 谭思良 */
+/* 头部搜索 */
+*{
+    margin:0;
+    padding:0;
+}
+ul,li{
+    list-style: none;
+}
+/* 头部搜索框 */
+#header{
+    width: 100%;
+    max-width:640px; 
+    height:auto; 
+    /* opacity: 0.5; */
+}
+
+#header .header_row{
+    margin:auto;
+    line-height:40px;
+    height:40px;
+}
+#header_form {
+    padding:0 10%;
+    height:40px;
+    position:relative;
+}
+#header .header_tp{
+    height:30px;
+    color:#c0bdbd;
+    background:#E6E6E6;
+    position:absolute;
+    top:4px;
+    right:10%;
+    border-radius:0 25px 25px 0;
+    outline: none;
+}
+#header .sousuo{
+    width:75%;
+    height:30px;
+    line-height:30px;
+    border-radius: 20px 0 0 20px;
+    background:#E6E6E6;
+    position:absolute;
+    top:4px;
+    /* opacity: 0.5; */
+    outline:none;
+}
+/* 头部左侧图标 */
+#header_left{
+    position:absolute;
+    left:3%;
+    height:30px;
+    line-height:30px;
+    top:4px;
+}
+#header_right{
+    position:absolute;
+    right:3%;
+    top:5px;
+    height:30px;
+    line-height:30px;
+    color:rgb(117, 116, 116);
+}
+/* 右图标的下拉菜单 */
+#header_right .header_right_ul{
+    position:absolute;
+    top:43px;
+    z-index: 100;
+    right:-2px;
+    background:#000;
+    width:125px;
+    height:200px;
+    border-radius: 8px;
+    opacity:0.9;
+    display:none;
+}
+#header_span{
+    display:inline-block;
+    position:absolute;
+    top:-8px;
+    right:8px;
+    color:black;
+}
+.header_right_ul li{
+    width:100%;
+    height:40px;
+    /* border:1px solid red; */
+}
+.header_right_ul li a{
+    color:#fff;
+    display:inline-block;
+    height:39px;
+    line-height:40px;
+}
+.header_right_ul li a:first-child{
+    height:40px;
+    width:40px;
+    padding-left: 10px;
+}
+.header_right_ul li a:last-child{
+    height:37px;
+    width:85px;
+    text-align:left;
+    border-bottom:1px solid #ddd;
+    display:inline-block;
+}
+
+/* 内容 */
+
+#content{
+    width:100%;
+    bottom:5%;
+    top:40px;
+    position:absolute;
+    background:rgb(236, 235, 235);
+    max-width:640px; height:auto;
+}
+/* 左侧导航 */
+#left{
+    width:30%;
+    float:left;
+    overflow-y: auto;
+    height:100%;
+    background:#fff;
+    border:1.5% solid rgb(236, 235, 235);;
+}
+#myTab li{
+    margin:0;
+    padding:0;
+}
+#myTab .active a,#myTab .active{
+    background:rgb(236, 235, 235);
+    border-color:rgb(236, 235, 235);
+    color:red;
+}
+.content_left{
+    width:100%;
+    margin:0;
+    padding:0;
+}
+.content_left a{
+    color:#000;
+}
+/* 右侧内容 */
+#right{
+    /* border:1px solid #000; */
+    width:70%;
+    float:left;
+    padding:2%;
+    overflow-y:auto;
+    height:100%;
+    font-size:0;
+}
+.tab-pane{
+    width:100%;
+    height:100%;
+}
+.remen{
+    margin:0;
+    padding:1%;
+}
+#classify_content{
+    background:#fff;
+    border-radius: 5px;
+    margin:0;
+}
+.classify_content_a{
+    display:inline-block;
+    width:32%;
+    text-align:center;
+    border:0;
+    margin:0;
+    font-size:12px;
+}
+.classify_content_a a{
+    color:#838282;
+}
+
+/* 页脚 */
+#footer{
+    width:100%;
+    height:100%;
+    clear: both;
+    
+}
+.footer_div{
+    background:#fff;
+    padding:0;
+    margin:0;
+    max-width:640px; 
+    height:auto; 
+    margin:auto;
+}
+.footer_li{
+    width:24%;
+    
+}
+.footer_li a{
+    text-align:center;
+}

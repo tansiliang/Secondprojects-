@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>商品分类列表</title>
+    <link rel="stylesheet" href="{$smarty.const.ADMIN_CSS_URL}/bootstrap-3.3.7/dist/css/bootstrap.min.css" />
+    <script src="{$smarty.const.ADMIN_JS_URL}/jquery-3.3.1/jquery-3.3.1.min.js"></script>
+    <script src="{$smarty.const.ADMIN_CSS_URL}/bootstrap-3.3.7/dist/js/bootstrap.min.js" ></script>
+    <link rel="stylesheet" href="{$smarty.const.ADMIN_CSS_URL}admin.css" type="text/css" />
+</head>
+<body>
+<div style="max-width:640px;margin:auto;">
+    <table class="table table-bordered">
+        <tr>
+            <th colspan="2" class="header_style">商品分类列表</th>
+            <th colspan="2" class="header_style"><a href="{$smarty.const.__URL__}/category_add.html" class="header_style_a" >添加商品分类信息</a></th>
+        </tr>
+        <tr>
+            <th>用户名</th>
+            <th>排序</th>
+            <th>是否显示</th>
+            <th>操作</th>
+        </tr>
+        {foreach $list as $row}
+        <tr>
+            <td style="text-align:left;">{str_repeat("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",$row['dree'])}{$row['category_name']}</td>
+            <td>{$row['category_order']}</td>
+            <td><img src="{$smarty.const.ADMIN_IMG_URL}{if $row['category_show'] eq 1}yes{else}no{/if}.gif" /></td>
+            <td><a href="{$smarty.const.__URL__}/category_edit/id/{$row['category_id']}">编辑</a><a onclick="if(window.confirm('是否确定删除？？？')){ location.href='{$smarty.const.__URL__}/del/id/{$row['category_id']}'}" >删除</a></td>
+        </tr>
+        {/foreach}
+    </table>
+</div>
+</body>
+</html>

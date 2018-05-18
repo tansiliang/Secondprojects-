@@ -1,0 +1,292 @@
+*{
+    margin:0;
+    padding:0;
+}
+ul,li{
+    list-style: none;
+}
+#bodys{
+    /* max-width: 100%; */
+    max-width:640px; 
+    height:auto; 
+    margin:auto;
+    position:relative;
+    /* opacity: 0.5; */
+}
+#header{
+    max-width:640px;
+    margin:auto;
+    position:relative;
+}
+#header .header_row{
+    margin:auto;
+    line-height:40px;
+    height:40px;
+    /* border-bottom:1px solid #ddd; */
+}
+.home_top{
+    width:100%;
+    height:40px;
+    line-height:40px;
+    text-align:center;
+}
+/* 头部左侧图标 */
+#header_left{
+    position:absolute;
+    left:3%;
+    height:30px;
+    line-height:30px;
+    top:4px;
+}
+#header_right{
+    position:absolute;
+    right:3%;
+    top:5px;
+    height:30px;
+    line-height:30px;
+    color:rgb(117, 116, 116);
+}
+/* 右图标的下拉菜单 */
+#header_right .header_right_ul{
+    position:absolute;
+    top:43px;
+    z-index: 100;
+    right:-2px;
+    background:#000;
+    width:125px;
+    height:200px;
+    border-radius: 8px;
+    opacity:0.9;
+    display:none;
+}
+#header_span{
+    display:inline-block;
+    position:absolute;
+    top:-8px;
+    right:8px;
+    color:black;
+}
+.header_right_ul li{
+    width:100%;
+    height:40px;
+    /* border:1px solid red; */
+}
+.header_right_ul li a{
+    color:#fff;
+    display:inline-block;
+    height:39px;
+    line-height:40px;
+}
+.header_right_ul li a:first-child{
+    height:40px;
+    width:40px;
+    padding-left: 10px;
+}
+.header_right_ul li a:last-child{
+    height:37px;
+    width:85px;
+    text-align:left;
+    border-bottom:1px solid #ddd;
+    display:inline-block;
+}
+
+/* 内容 */
+#content{
+    width:100%;
+    margin:auto;
+    padding:0 10px;
+}
+#content_top{
+    border-bottom:1px solid #ddd;
+}
+#top{
+    height:25px;
+    line-height:25px;
+    font-size:15px;
+}
+/* 用户头像设置 */
+#content_top_ul{
+    width:100%;
+    margin:auto;
+    position:relative;
+    border-bottom:1px solid #ddd;
+    padding:5px 0;
+}
+#content_top_ul .top_ul_li img{
+    height:50px;
+    width:50px;
+    border-radius: 50px;
+    position:absolute;
+    margin-left:5px;
+}
+#content_top_ul .top_ul_li div{
+    margin-left:60px;
+    /* color:#fff; */
+    font-size:15px;
+}
+#pet_div,#user_div,#login_div{
+    height:25px;
+    line-height:25px;
+}
+#user_div{
+    color:rgb(143, 140, 140);
+}
+/* 修改信息 */
+.set_info ,#content_out{
+    width:100%;
+    margin:auto;
+    /* position:relative; */
+    
+}
+.info_form{
+    height:45px;
+    line-height:45px;
+    display:-webkit-box;
+    display:flex;
+    border-bottom:1px solid #ddd;
+}
+.info_form span{
+    display:block;
+    flex:1;
+    font-size:15px;
+    color:rgb(143, 140, 140);
+}
+.info_form span:last-child{
+    text-align:right;
+    line-height:45px;
+}
+#out_div{
+    text-align:center;
+    height:45px;
+    line-height:45px;
+}
+#out_div button{
+    width:auto;
+    height:35px;
+    line-height:35px;
+    padding:0 8px;
+    border:1px solid #ddd;
+    border-radius: 5px;
+    background:#ddd;
+    text-align:center;
+    color:red;
+    outline:none;
+}
+
+/* 修改昵称 */
+
+#footer{
+    max-width:640px;
+    /* height:auto; */
+    margin:auto;
+    margin:0 20px;
+    /* border:1px solid red; */
+    position:absolute;
+    top:50%;
+    background:white;
+    z-index: 16;
+    display:none;
+}
+/* 响应式 当文档的宽度大于768px时执行 */
+@media only screen and (min-width:768px) {
+    #footer{
+        margin:0 25%;
+    }
+}
+#footer_logo{
+    width:100%;
+    display: inline-block;
+    height:35px;
+    line-height:35px;
+    text-align:center;
+    border-bottom:1px solid rgb(194, 191, 191);
+}
+#footer_content{
+    padding:0 20px;
+}
+#content_name,#content_nick{
+    height:45px;
+    line-height:45px;
+    position:relative;
+}
+#login_name,#login_nick{
+    width:60px;
+    height:35px;
+    line-height:36px;
+    text-align:center;
+    top:5px;
+    position:absolute;
+    display:inline-block;
+    z-index: 9;
+    font-size:15px;
+    border-right:1px solid #ddd; 
+    color:#999999;
+}
+#username,#nick{
+    width:100%;
+    height:35px;
+    top:5px;
+    padding:0 30px 0 62px;
+    position:absolute;
+}
+#footer input {
+    border:1px solid #ddd;
+    display:inline-block;
+    outline: none;
+    font-size:15px;
+    box-sizing:border-box;
+    background:#F2F2F7;
+    color:#999;
+}
+#content_nick input{
+    color:#000;
+    background:#fff;
+}
+/* 用户名的文字注释 */
+#form_name span{
+    height:35px;
+    display:inline-block;
+    color:#999;
+    /* line-height:45px; */
+}
+#form_nick span{
+    height:35px;
+    display:inline-block;
+    color:#999;
+}
+
+/* 按钮 */
+#nick_button{
+    width:100%;
+    margin:auto;
+}
+#nick_div{
+    height:40px;
+    line-height:40px;
+    display:-webkit-box;
+    display:flex;
+    border-top:1px solid rgb(194, 191, 191);
+}
+#nick_div input{
+    flex:1;
+    display:block;
+    outline:none;
+    color:#000;
+    border:0;
+}
+#nick_div input:last-child{
+    color:red;
+    border-left:1px solid rgb(194, 191, 191);
+}
+
+#nick_bg{
+    width:100%;
+    height:100%;
+    max-width:640px;
+    top:0;
+    position:fixed;
+    background:#000;
+    z-index: 15;
+    opacity: 0.7;
+    display:none;
+}

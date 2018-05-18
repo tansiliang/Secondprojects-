@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{$smarty.const.HOME_CSS_URL}/bootstrap-3.3.7/dist/css/bootstrap.min.css" />
+    <script src="{$smarty.const.HOME_JS_URL}/jquery-3.3.1/jquery-3.3.1.min.js"></script>
+    <script src="{$smarty.const.HOME_CSS_URL}/bootstrap-3.3.7/dist/js/bootstrap.min.js" ></script>
+    <link rel="stylesheet" href="{$smarty.const.ADMIN_CSS_URL}admin.css" type="text/css" />
+    <title>编辑页面</title>
+    <style>
+        {literal}
+        .table tbody tr td,.table tfoot tr td{
+            text-align:center;
+            vertical-align:middle;
+        }
+        .table-bordered thead tr th,.table-bordered tbody tr td{
+            border-bottom-width: 0;
+            border:1px solid #B5CFD9;
+        }
+        #username ,#pass,#userpass,#time,#old,#salt{
+            color:red;
+        }
+        {/literal}
+        </style>
+        <script type="text/javascript">
+        {literal}
+        $("document").ready(function(){
+            $("#rota_imgthumn").change(function(){
+                var work_img = document.getElementById("rota_imgthumn").files[0];
+                var imgs = document.getElementById('imagess');
+                imgs.src = window.URL.createObjectURL(work_img);
+            });
+        });
+        {/literal}
+    </script>
+</head>
+<body>
+    <table class="table table-bordered">
+        <form action="{$smarty.const.__URL__}/edit" method="post" enctype="multipart/form-data">
+        <thead>
+            <tr>
+                <th colspan="3" class="header_style"><a href="{$smarty.const.__URL__}/admin.html" class="header_style_a" >图片轮播列表</a></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>图片名称</td>
+                <td><input type="text" class="form-control" name="rota_name" id="rota_name" value="{$list['rota_name']}" /></td>
+                <td id="username"></td>
+            </tr>
+            <tr>
+                <td>图片</td>
+                <td><input type="file" name="rota_imgthumn" id="rota_imgthumn" /></td>
+                <td><img id="imagess" src="{$smarty.const.UPLOAD_DIR}{$list['rota_images']}" style="max-height:100px;max-width:100px;" /><input type="hidden" name="rota_images" value="{$list['rota_images']}" /><input type="hidden" name="rota_thumn" value="{$list['rota_thumn']}" /></td>
+            </tr>
+            <tr>
+                <td>添加时间</td>
+                <td><input type="text" class="form-control"  name="rota_time" value="{date('Y-m-d H:i:s',$list['rota_time'])}" disabled id="rota_time" /></td>
+                <td id="time"></td>
+            </tr>
+            <tr>
+                <td>是否显示</td>
+                <td>{html_radios options=$show selected=$sel name='rota_show'}</td>
+                <td id="show"></td>
+            </tr>
+            <tr>
+                <td>排序</td>
+                <td><input type="text" class="form-control" name="rota_order" id="rota_order" value="{$list['rota_order']}" /></td>
+                <td id="userpass"></td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <input type="hidden" value="{$list['rota_id']}" name="rota_id" id="rota_id" />
+                <td colspan="3"><button type="reset" class="btn btn-danger" name="rota_ap_res" id="rota_ap_res" >重置</button><span style="width:10px;display:inline-block;"></span><button class="btn btn-success" type="submit" name="rota_ap_sub" id="rota_ap_sub" >修改</button></td>
+            </tr>
+        </tfoot>
+        </form>
+        </table>
+</body>
+</html>

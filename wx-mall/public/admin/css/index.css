@@ -1,0 +1,164 @@
+/* 谭思良 */
+
+/* 头部 */
+*{
+    margin:0;
+    padding:0;
+}
+ul,li{
+    list-style: none;
+}
+/* 头部搜索框 */
+#header{
+    width: 100%;
+    max-width:640px; 
+    height:auto; 
+    /* opacity: 0.5; */
+    
+}
+
+#header .header_row{
+    margin:auto;
+    line-height:40px;
+    height:40px;
+}
+#header_form {
+    padding:0 10%;
+    height:40px;
+    position:relative;
+}
+#header .header_tp{
+    height:30px;
+    color:#c0bdbd;
+    background:#E6E6E6;
+    position:absolute;
+    top:4px;
+    right:10%;
+    border-radius:0 25px 25px 0;
+    outline: none;
+}
+#header .sousuo{
+    width:75%;
+    height:30px;
+    line-height:30px;
+    border-radius: 20px 0 0 20px;
+    background:#E6E6E6;
+    position:absolute;
+    top:4px;
+    opacity: 0.5;
+    outline:none;
+}
+/* 头部左侧图标 */
+#header_left{
+    position:absolute;
+    left:3%;
+    height:30px;
+    line-height:30px;
+    top:4px;
+}
+#header_right{
+    position:absolute;
+    right:3%;
+    top:5px;
+    height:30px;
+    line-height:30px;
+    font-size:16px;
+    color:rgb(117, 116, 116);
+}
+
+
+
+
+
+
+#index_content{
+    max-width:640px;
+    margin:auto;
+    position:absolute;
+    top:40px;
+    bottom:0;
+    width:100%;
+}
+#index_content_list{
+    overflow: auto;
+    height:100%;
+}
+/* 图片轮播最外层div */
+#sowing{
+    max-width:1024px;
+    max-height:383px;
+}
+
+/* 图片轮播的图片大小 */
+.carousel-inner img{
+    width:100%;
+    height:100%;
+}
+
+/* content内容 */
+/* 频道入口 */
+#content{
+    margin-bottom:11%;
+    
+}
+.spans {
+    display: inline-block;
+    width:17%;
+    margin:1% 1% 1% 1%;  
+    text-align:center;
+    border:0;
+    color:#000;
+  }
+  .spans img{
+      width:100%;
+      height:95%;
+  }
+/* 推荐商品 */
+.goods{
+    
+    /* background-color:#ddd; */
+    color:rgb(255, 196, 0);
+}
+.tuiju{
+    background-color:#ddd;
+    
+}
+.reco{
+    width:49.3%;
+    display: inline-block;
+    border-radius: 0;
+    margin:0.3% 0 0 0;
+}
+.reco_li_j{
+    line-height:2em;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    color:#000;
+}
+.reco_li_m{
+    color:red;
+    font-weight: bold;
+}
+
+/* 页脚 */
+#footer{
+    width:100%;
+    height:100%;
+    
+}
+.footer_div{
+    background:#fff;
+    padding:0;
+    max-width:640px; 
+    height:auto; 
+    margin:auto;
+}
+.footer_li{
+    width:24.5%;
+    
+}
+.footer_li a{
+    text-align:center;
+}
+

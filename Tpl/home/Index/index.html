@@ -1,0 +1,140 @@
+<!-- 谭思良 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>商城</title>
+    <link rel="stylesheet" href="{$smarty.const.HOME_CSS_URL}/bootstrap-3.3.7/dist/css/bootstrap.min.css" />
+    <script src="{$smarty.const.HOME_JS_URL}/jquery-3.3.1/jquery-3.3.1.min.js"></script>
+    <script src="{$smarty.const.HOME_CSS_URL}/bootstrap-3.3.7/dist/js/bootstrap.min.js" ></script>
+    <link rel="stylesheet" href="{$smarty.const.HOME_CSS_URL}/index.css" type="text/css" />
+    <script src="{$smarty.const.HOME_JS_URL}/index.js"></script>
+    <script>
+        {literal}
+        $("document").ready(function(){
+            $(".sousuo").focus(function(){
+                $(this).css({'opacity': '1',});
+                $("#header").css({'opacity':'1'});
+            });
+            $(".sousuo").blur(function(){
+                $(this).css({'opacity':'0.5',});
+                
+            })
+            $("#index_content_list").scroll(function(){
+                $('#header').css({'opacity':'1'});
+            });
+
+            var divs = $(".item");
+            var lis = $('.carousel-indicators li');
+            for(var i = 0; i < divs.length; i++){
+                divs.eq(0).addClass("active");
+                lis.eq(0).addClass("active");
+            }
+        });
+        {/literal}
+    </script>
+</head>
+<body style="font-size:0;">
+    <div style="max-width:640px; height:auto; margin:auto;">
+    <!-- 头部搜索框 -->
+<div id="header" class="" >
+    <div class="header_row">
+        <div id="header_form">
+            <div id="header_left">
+                <a href="{$smarty.const.__URL__}/classify.html" style="color:rgb(165, 167, 167);">
+                <span class="glyphicon glyphicon-th-list"></span>
+                </a>
+            </div>
+            <from class="bs-example bs-example-form" role="form">
+                <input type="text" class="form-control sousuo " placeholder="搜索" ><button type="submit" class=" header_tp btn btn-default"><span class="glyphicon glyphicon-search"></span>
+                </button>
+            </from>
+            <div id="header_right">
+                <a href="{$smarty.const.__URL__}/home.html" style="color:rgb(165, 167, 167);">
+                    <span class="glyphicon glyphicon-user"><br/></span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 图片轮播 -->
+<div id="index_content">
+    <div id="index_content_list">
+    <div id="sowing" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            {foreach $rota_list as $rota_row}
+                {if $rota_row['rota_show'] == 1 && $rota_row@index < 4}
+                <li data-target="#sowing" data-slide-to="{$rota_row@index}"></li>
+                {/if}
+            {/foreach}
+        </ol>
+        <div class="carousel-inner">
+            {foreach $rota_list as $rota_rows}
+            {if $rota_rows['rota_show'] == 1 && $rota_rows@index < 4}
+            <div class="item">
+                <img src="{$smarty.const.UPLOAD_DIR}{$rota_rows['rota_images']}" alt="">
+            </div>
+            {/if}
+            {/foreach}
+        </div>
+        <a class="left carousel-control " href="#sowing" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+        </a>
+        <a class="right carousel-control"  href="#sowing" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+    </div>
+
+    <div id="content">
+            <div class="content_div">
+                {foreach $entry_list as $entry}
+                    {if $entry['entry_show'] == 1 && $entry@index < 10}
+                    <a class="thumbnail spans" href="{$entry['entry_url']}">
+                        <img src="{$smarty.const.UPLOAD_DIR}{$entry['entry_images']}" />
+                            <span>{$entry['entry_name']}</span>
+                    </a>
+                    {/if}
+                {/foreach}
+                    
+            </div>
+            <div >
+                <h4 class="text-center goods">推荐商品</h4>
+                <div class="tuiju">
+                    {foreach $goods_list as $goods}
+                    {if $goods['goods_groom'] == 1 && $goods['goods_show'] == 1}
+                    <div class="thumbnail reco">
+                        <span class=" glyphicon glyphicon-remove" style="float:right;" onclick="getRemo(this)"></span>
+                        <a class="" href="{$smarty.const.__URL__}/list.html">
+                                <img src="{$smarty.const.UPLOAD_DIR}{$goods['goods_images']}" />
+                                <ul>
+                                    <li class="reco_li_j">{$goods['goods_desc']} </li>
+                                    <li class="reco_li_m">￥<span>{$goods['goods_price']}</span></li>
+                                </ul>
+                                
+                        </a>
+                    </div>
+                    {/if}
+                    {/foreach}
+                </div>
+                
+                
+            </div>
+    </div>
+    </div>
+</div>
+<div id="footer">
+    <div class="container-fluid navbar-fixed-bottom footer_div">
+        <ul class="nav nav-pills">
+                <li class="footer_li" onclick="get(0)"><a href="{$smarty.const.__URL__}/index.html" class="glyphicon glyphicon-home"><br/>首页</a></li>
+                <li class="active footer_li" onclick="get(1)"><a href="{$smarty.const.__URL__}/classify.html" class="glyphicon glyphicon-share"><br/>分类</a></li>
+                <li class=" active footer_li" onclick="get(2)"><a href="{$smarty.const.__URL__}/shopcart.html" class="glyphicon glyphicon-shopping-cart" onclick="get(3)"><br/>购物车</a></li>
+                <li class=" active footer_li" onclick="get(3)"><a href="{$smarty.const.__URL__}/home.html" class="glyphicon glyphicon-user"><br/>我的</a></li>
+        </ul>
+    </div>
+</div>
+
+</body>
+</html>

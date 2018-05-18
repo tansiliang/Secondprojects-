@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{$smarty.const.ADMIN_CSS_URL}/bootstrap-3.3.7/dist/css/bootstrap.min.css" />
+    <script src="{$smarty.const.ADMIN_JS_URL}/jquery-3.3.1/jquery-3.3.1.min.js"></script>
+    <script src="{$smarty.const.ADMIN_CSS_URL}/bootstrap-3.3.7/dist/js/bootstrap.min.js" ></script>
+    <title>编辑页面</title>
+    <style>
+        {literal}
+        .table tbody tr td,.table tfoot tr td{
+            text-align:center;
+            vertical-align:middle;
+        }
+        .table-bordered thead tr th,.table-bordered tbody tr td{
+            border-bottom-width: 0;
+            border:1px solid #B5CFD9;
+        }
+        #name ,#pass,#order,#url,#old,#salt{
+            color:red;
+        }
+        {/literal}
+        </style>
+        <script>
+            {literal}
+            $("document").ready(function(){
+                $("#goods_imgthumn").change(function(){
+                var work_img = document.getElementById("goods_imgthumn").files[0];
+                var imgs = document.getElementById('imagess');
+                imgs.src = window.URL.createObjectURL(work_img);
+                });
+            });
+            {/literal}
+        </script>
+</head>
+<body>
+    <table class="table table-bordered">
+        <form action="{$smarty.const.__URL__}/edit" method="post" enctype="multipart/form-data">
+            <thead>
+                <tr>
+                    <th colspan="3"><button type="button" onclick="location.href='{$smarty.const.__URL__}/goods'" class="btn btn-info"><span class="glyphicon glyphicon-list-alt" style="font-size:10px;margin-right:2px;"></span>商品列表</button></th>
+                </tr>
+            </thead>
+        <tbody>
+            <tr>
+                <td>分类名</td>
+                <td><input type="" placeholder="" class="form-control" name="goods_name" id="goods_name" value="{$list['goods_name']}" /></td>
+                <td id="name"></td>
+            </tr>
+            <tr>
+                <td>库存</td>
+                <td><input type="text" class="form-control"  name="goods_number" value="{$list['goods_number']}" id="goods_number" /></td>
+                <td id="url"></td>
+            </tr>
+            <tr>
+                <td>货号</td>
+                <td><input type="text" class="form-control"  name="goods_sn" value="{$list['goods_sn']}" id="goods_sn" /></td>
+                <td id="sn"></td>
+            </tr>
+            <tr>
+                <td>当前分类</td>
+                <td>
+                    <select name="goods_cateid" class="form-control">
+                        {foreach $link as $row}
+                            <option value="{$row['category_id']}" {if $row['category_id'] eq $list['goods_cateid']}selected{/if} >{str_repeat("&nbsp;&nbsp;&nbsp;",$row['dree'])}{$row['category_name']}</option>
+                        {/foreach}
+                    </select>
+                </td>
+                <td id="parent"></td>
+            </tr>
+            <tr>
+                    <td>商品描述</td>
+                    <td>
+                        <textarea rows="3" class="form-control" cols="10" id="goods_desc" name="goods_desc">{$list['goods_desc']}</textarea>
+                    </td>
+                    <td id="price"></td>
+                </tr>
+                <tr>
+                    <td>价格</td>
+                    <td><input type="text" placeholder="" class="form-control" name="goods_price" id="goods_price" value="{$list['goods_price']}" /></td>
+                    <td id="price"></td>
+                </tr>
+                <tr>
+                    <td>图片</td>
+                    <td><input type="file" name="goods_imgthumn" id="goods_imgthumn" /></td>
+                    <td><img id="imagess" src="{$smarty.const.UPLOAD_DIR}{$list['goods_images']}" style="max-height:100px;max-width:100px;" /><input type="hidden" name="goods_images" value="{$list['goods_images']}" /><input type="hidden" name="goods_thumn" value="{$list['goods_thumn']}" /></td>
+                </tr>
+                <tr>
+                    <td>商品状态</td>
+                    <td><input type="checkbox" name="is_best" value="1" {if 1 & $list['goods_stutas']}checked{/if} />精品 <input type="checkbox" name="is_new" value="2" {if 2 & $list['goods_stutas']}checked{/if}/>新品 <input type="checkbox" name="is_hot" value="4" {if 4 & $list['goods_stutas']}checked{/if}/>热销</td>
+                    <td id="number"></td>
+                </tr>
+            <tr>
+                <td>是否上架</td>
+                <td>{html_radios options=$show selected=$sel name='goods_show'}</td>
+                <td id="show"></td>
+            </tr>
+            <tr>
+                <td>是否推荐</td>
+                <td>{html_radios options=$groom selected=$groom_sel name='goods_groom'}</td>
+                <td id="show"></td>
+            </tr>
+            <tr>
+                <td>创建时间</td>
+                <td><input type="text" class="form-control" name="add_time" id="" value="{date('Y-m-d H:i:s',$list['add_time'])}" disabled/></td>
+                <td id=""></td>
+            </tr>
+            <tr>
+                <td>更新时间</td>
+                <td><input type="text" class="form-control" name="goods_updatetime" id="" value="{date('Y-m-d H:i:s',$list['goods_updatetime'])}" disabled/></td>
+                <td id=""></td>
+            </tr>
+            <tr>
+                <td>排序</td>
+                <td><input type="text" class="form-control" placeholder="" name="goods_order" id="goods_order" value="{$list['goods_order']}" /></td>
+                <td id="order"></td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <input type="hidden" value="{$list['goods_id']}" name="goods_id" id="goods_id" />
+                <td colspan="3"><button type="reset" class="btn btn-danger" name="goods_ap_res" id="goods_ap_res" >重置</button><span style="width:10px;display:inline-block;"></span><button class="btn btn-success" type="submit" name="goods_ap_sub" id="goods_ap_sub" >修改</button></td>
+            </tr>
+        </tfoot>
+        </form>
+    </table>
+</body>
+</html>

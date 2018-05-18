@@ -1,0 +1,120 @@
+*{
+    margin:0;
+    padding:0;
+}
+#bodys{
+    max-width:640px;
+    margin:auto;
+    height:auto;
+}
+ul,li{
+    list-style: none;
+}
+/* 头部信息 */
+#header ,#form_site{
+    width:100%;
+    margin:auto;
+    position:relative;
+}
+#header_form{
+    height:50px;
+    line-height:50px;
+    background:url(../images/bg.jpg) repeat-x;
+}
+#header_form a{
+    position:absolute;
+    margin-left:5px;
+    top:14px;
+    font-size:15px;
+    color:rgb(102, 102, 102);
+}
+.header_text{
+    width:100%;
+    font-size:16px;
+    text-align:center;
+    display:inline-block;
+}
+/* 多选框 */
+#form_check{
+    position:absolute;
+    top:30px;
+    left:10px;
+}
+.checkboxs{
+    width:20px;
+    height:20px;
+    border:1px solid #ddd;
+    border-radius: 50px;
+}
+.glyphicon-ok{
+    width:20px;
+    height:20px;
+    background:red;
+    color:#fff;
+    padding-top:2px;
+    padding-left:2px;
+}
+/* 地址 */
+#form_site a{
+    color:black;
+}
+.site_ul{
+    padding:10px;
+    padding-left:40px;
+}
+.site_info_name{
+    height:25px;
+    line-height:25px;
+    font-size:15px;
+    font-weight: bold;
+}
+
+.site_ul .site_min{
+    height:36px;
+    line-height:18px;
+    padding-right:40px;
+    font-size:14px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-word;
+    display:-webkit-box;
+    -webkit-line-clamp:2;
+    -webkit-box-orient:vertical;
+}
+.ico{
+    position:absolute;
+    right:0;
+    top:30px;
+    margin-right:20px;
+    color:rgb(160, 160, 160);
+}
+
+/* 添加 */
+#price{
+    width:100%;
+    margin:auto;
+    border-top:1px solid #ddd;
+}
+.price_ul{
+    height:40px;
+    line-height:40px;
+    display:-webkit-box;
+    display:flex;
+    font-weight:lighter;
+    padding: 0 10px;
+}
+.price_ul li{
+    -webkit-box-flex:1;
+    -webkit-flex:1;
+    flex:1;
+    display:block;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    word-break:break-word;
+    font-size:14px;
+}  
+.price_ul li:last-child{
+    text-align:right;   
+    font-size:15px;
+    color:#ddd;
+} 

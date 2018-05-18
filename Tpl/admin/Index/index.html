@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>后台首页</title>
+    <link rel="stylesheet" href="{$smarty.const.ADMIN_CSS_URL}/bootstrap-3.3.7/dist/css/bootstrap.min.css" />
+    <script src="{$smarty.const.ADMIN_JS_URL}/jquery-3.3.1/jquery-3.3.1.min.js"></script>
+    <script src="{$smarty.const.ADMIN_CSS_URL}/bootstrap-3.3.7/dist/js/bootstrap.min.js" ></script>
+    <link rel="stylesheet" type="text/css" href="{$smarty.const.ADMIN_CSS_URL}font_ico/iconfont.css" /> 
+    <link rel="stylesheet" type="text/css" href="{$smarty.const.ADMIN_CSS_URL}home.css" />
+    <script src="{$smarty.const.ADMIN_JS_URL}home.js">
+    </script>
+    <style type="text/css">
+    {literal}
+        .header_left_die{
+            color:rgb(165, 167, 167);
+            display:inline-block;
+            border-radius: 5px; 
+            color:white;
+            padding:0 10px;
+        }
+        #frame{
+            border:0;
+            width:100%;
+        }
+        #header_right .header_right_ul{
+            height:300px;
+        }
+    {/literal}
+    </style>
+</head>
+<body>
+    <div id="bodys">
+        <div id="header">
+            <div class="header_row">
+                <div id="header_form">
+                    <div id="header_left">
+                        <a class="header_left_die" href="{$smarty.const.__URL__}/dies" style="
+                        background:red;">退出
+                        </a>
+                        <a class="header_left_die" href="{$smarty.const.__URL__}/admin_edit/id/{$lists['ad_id']}" title="当前管理员" style="background:blue;" target="content">{$lists['ad_username']}
+                        </a>
+                    </div>
+                    <div class="home_top">
+                        <span style="font-size:18px;font-weight:bold;">后台页面</span>
+                    </div>
+                    <div id="header_right">
+                        <a href="{$smarty.const.SITE_URL}index.php/home/Index/index" class="header_left_die" style="background:rgb(99, 201, 3);">前台首页</a>
+                            <span class="iconfont icon-gengduo" id="header_right_ico" style="color:rgb(165, 167, 167);"></span>
+                        <ul class="header_right_ul">
+                            <span class="glyphicon glyphicon-eject" id="header_span"></span>
+                            <li><a href="{$smarty.const.__URL__}/admin.html" target="content">管理员信息</a></li>
+                            <li><a href="{$smarty.const.__GROUP__}/Insider/insider.html" target="content">会员信息</a></li>
+                            <li><a href="{$smarty.const.__GROUP__}/Category/category.html" target="content">商品分类</a></li>
+                            <li><a href="{$smarty.const.__GROUP__}/Goods/goods.html" target="content">商品列表</a></li>
+                            <li><a href="{$smarty.const.__GROUP__}/Rotation/rotation.html" target="content">首页轮播图</a></li>
+                            <li><a href="{$smarty.const.__GROUP__}/Entry/entry" target="content">频道入口</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    <iframe name="content" src="{$smarty.const.__URL__}/admin.html" width="100%" style="height:1350px;" id="frame" frameborder="0" seamless>
+    </iframe>
+</div>
+</body>
+</html>

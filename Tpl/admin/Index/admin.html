@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>管理员列表</title>
+    <link rel="stylesheet" href="{$smarty.const.ADMIN_CSS_URL}/bootstrap-3.3.7/dist/css/bootstrap.min.css" />
+    <script src="{$smarty.const.ADMIN_JS_URL}/jquery-3.3.1/jquery-3.3.1.min.js"></script>
+    <script src="{$smarty.const.ADMIN_CSS_URL}/bootstrap-3.3.7/dist/js/bootstrap.min.js" ></script>
+    <link rel="stylesheet" href="{$smarty.const.ADMIN_CSS_URL}admin.css" type="text/css" />
+</head>
+<body>
+<div style="max-width:640px;margin:auto;">
+    <table class="table table-bordered">
+        <tr>
+            <th colspan="2" class="header_style">管理员列表</th>
+            <th colspan="2" class="header_style"><a href="{$smarty.const.__URL__}/admin_add.html" class="header_style_a" >添加管理员信息</a></th>
+        </tr>
+        <tr>
+            <th>编号</th>
+            <th>用户名</th>
+            <th>登录日期</th>
+            <th>操作</th>
+        </tr>
+        {foreach $list as $row}
+        <tr>
+            <td>{$row@iteration}</td>
+            <td>{$row['ad_username']}</td>
+            <td>{date('Y-m-d',$row['ad_addtime'])}</td>
+            <td><a href="{$smarty.const.__URL__}/admin_edit/id/{$row['ad_id']}">编辑</a><a onclick="if(window.confirm('是否确定删除？？？')){ location.href='{$smarty.const.__URL__}/del/id/{$row['ad_id']}'}" >删除</a></td>
+        </tr>
+        {/foreach}
+    </table>
+</div>
+</body>
+</html>

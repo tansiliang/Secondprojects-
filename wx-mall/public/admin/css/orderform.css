@@ -1,0 +1,240 @@
+*{
+    margin:0;
+    padding:0;
+}
+#bodys{
+    max-width:640px;
+    margin:auto;
+    height:auto;
+}
+ul,li{
+    list-style: none;
+}
+/* 头部信息 */
+#header ,#form_site{
+    width:100%;
+    margin:auto;
+    position:relative;
+}
+#header_form{
+    height:50px;
+    line-height:50px;
+    background:url(../images/bg.jpg) repeat-x;
+}
+#header_form a{
+    position:absolute;
+    
+    /* left:5px; */
+    margin-left:5px;
+    top:15px;
+    font-size:18px;
+    color:rgb(102, 102, 102);
+}
+.header_text{
+    width:100%;
+    font-size:16px;
+    text-align:center;
+    display:inline-block;
+}
+
+/* 地址 */
+#form_site a{
+    color:black;
+}
+.site_ul{
+    padding:10px;
+}
+.site_info_name{
+    height:25px;
+    line-height:25px;
+    font-size:15px;
+    font-weight: bold;
+}
+
+.site_ul .site_min{
+    height:36px;
+    line-height:18px;
+    padding-right:40px;
+    font-size:14px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-word;
+    display:-webkit-box;
+    -webkit-line-clamp:2;
+    -webkit-box-orient:vertical;
+}
+.ico{
+    position:absolute;
+    right:0;
+    top:30px;
+    margin-right:20px;
+    color:rgb(160, 160, 160);
+}
+
+/* 商品信息 */
+#content_info {
+    border-top:2px solid #ddd;
+    border-bottom:2px solid #ddd;
+}
+#info_name{
+    height:30px;
+    line-height:30px;
+    font-size:16px;
+    font-weight: bold;
+    padding-left:10px;
+}
+.info_dj{
+    margin:0 10px;
+}
+.info_img_text{
+    position:relative;
+    min-height:75px;
+    padding:0;
+    font-size:12px;
+    padding-top:15px;
+}
+
+/* 图片 */
+.info_img_text img{
+    width:75px;
+    height:75px;
+    position:absolute;  
+    top:15px;
+    left:0;
+    border:0;
+    vertical-align: top;
+}
+/* 商品介绍 */
+#info_fn{
+    height:40px;
+    margin-bottom:5px;
+    line-height:20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp:2;
+}
+.info_sku{
+    margin-bottom:6px;
+    line-height:1;
+    color:#999;
+    font-size:12px;
+}
+.info_price{
+    padding-left:85px;
+    height:30px;
+    line-height:30px;
+    color:red;
+    font-size:14px;
+}
+#info_fn,.info_sku,.info_price{
+    padding-left:85px;
+}
+#info_nums{
+    width:100px;
+    height:30px;
+    line-height:30px;
+    /* border:1px solid red; */
+    margin-top:-40px;
+    position:absolute;
+    right:0;
+    z-index: 100;
+}
+#info_nums input{
+    height:28px;
+    width:30px;
+    border:0;
+    background:rgb(189, 188, 188);
+    /* border-radius: 5px; */
+    outline: none;
+    float:left;
+    margin-top:2px;
+    border-left:1px solid #fff;
+    border-right:1px solid #fff;
+    text-align:center;
+}
+#info_nums span{
+    width:30px;
+    height:30px;
+    display:inline-block;
+    float:left;
+    text-align:center;
+    line-height:30px;
+    background: #ddd;
+    border-radius: 5px;
+}
+/* 备注 */
+#remarks{
+    height:40px;
+    line-height:40px;
+    /* border-top:2px solid #ddd; */
+    border-bottom:2px solid #ddd;
+}
+#remarks span{
+    font-size:14px;
+    width:64px;
+    display:inline-block;
+    height:40px;
+    line-height:35px;
+    text-align:center;float:left;
+}
+#remarks input{
+    height:35px;
+    width:75%;
+    line-height:40px;
+    border:0;
+    outline:none;
+    position:absolute;
+}
+.delivery,.online{
+    /* width:95%; */
+    margin:10px;
+}
+.very_but{
+    width:98%;
+    height:46px;
+    background:rgb(0, 153, 255);
+    border:0;
+    font-size:15px;
+    font-weight: bold;
+    color:#fff;
+}
+.online_sub{
+    width:98%;
+    height:46px;
+    border:0;
+    font-size:15px;
+    font-weight: bold;
+    color:#fff;
+    background:red;
+}
+
+/* 商品金额 */
+#price{
+    width:100%;
+    margin:auto;
+}
+.price_ul{
+    height:40px;
+    line-height:40px;
+    display:-webkit-box;
+    display:flex;
+    font-weight:lighter;
+    padding: 0 10px;
+}
+.price_ul li{
+    -webkit-box-flex:1;
+    -webkit-flex:1;
+    flex:1;
+    display:block;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    word-break:break-word;
+    font-size:14px;
+}
+.price_ul li:last-child{
+    text-align:right;
+    color:red;
+    font-size:16px;
+}

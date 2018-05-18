@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{$smarty.const.HOME_CSS_URL}/bootstrap-3.3.7/dist/css/bootstrap.min.css" />
+    <script src="{$smarty.const.HOME_JS_URL}/jquery-3.3.1/jquery-3.3.1.min.js"></script>
+    <script src="{$smarty.const.HOME_CSS_URL}/bootstrap-3.3.7/dist/js/bootstrap.min.js" ></script>
+    <title>修改页面</title> 
+    <link rel="stylesheet" type="text/css" href="{$smarty.const.HOME_CSS_URL}alert.css" />
+    <script src="{$smarty.const.HOME_JS_URL}alert.js" ></script>
+</head>
+<body>
+    <div id="bodys">
+        <header id="header">
+            <div id="header_form"><a href="{$smarty.const.__URL__}/account" class="glyphicon glyphicon-chevron-left"></a>
+                <span class="header_text">修改密码</span>
+            </div>
+        </header>
+        <div id="content">
+            <form action="{$smarty.const.__URL__}/editPass" method="post">
+            <div id="content_name">
+                <div id="login_name">
+                    账号
+                </div>
+                <input type="text" class="" value="{$smarty.session.insider['insider_name']}" disabled name="username" id="username" placeholder="用户名/已验证手机" />
+            </div>
+            <div id="name_text">
+                <span>用户名不能修改</span>
+            </div>
+            <div id="content_nick">
+                <div id="login_nick">
+                    昵称
+                </div><input type="hidden" value="{$smarty.session.insider['insider_name']}" name="name" id="name" />
+                <input type="text" class="" name="nick" id="nick" value="{$smarty.session.insider['insider_nick']}" placeholder="请输入昵称" />
+                <i class="glyphicon glyphicon-remove-sign ico nick_ico" style="display:none;"></i>
+            </div>
+            <div id="content_oldpass">
+                <div id="login_oldpass">
+                    旧密码
+                </div>
+                <input type="password" class="" name="oldpass" id="oldpass" placeholder="请输入旧密码" />
+                <i class="glyphicon glyphicon-remove-sign ico oldpass_ico" style="display:none;"></i>
+                <label class="glyphicon ico ico_exes glyphicon-eye-close"></label>
+            </div>
+            <div id="content_pass">
+                <div id="login_pass">
+                    新密码
+                </div>
+                <input type="password" placeholder="请输入密码" name="userpass" id="userpass" />
+                <i class=" glyphicon glyphicon-remove-sign pass_ico ico" style="display:none;"></i>
+                <label class="glyphicon ico_exe ico glyphicon-eye-close"></label>
+            </div>
+            <div id="content_password">
+                <div id="login_password">
+                    确认密码
+                </div>
+                <input type="password" placeholder="请输入确认密码" name="userpassword" id="userpassword" />
+                <i class=" glyphicon glyphicon-remove-sign password_ico ico" style="display:none;"></i>
+                <label class="ico_eye ico glyphicon glyphicon-eye-close"></label>
+            </div>
+            <div id="login_submit">
+                <input type="submit" class="" name="login_submit" id="login_submit" value="保存" />
+            </div>
+            <div id="login_bottom">
+                <!-- <ul class="login_bottom_ul">
+                    <li class="bottom_li">
+                        <span><a href="">忘记密码?</a></span>
+                        <span><a href="enroll.html">注册</a></span>
+                    </li>
+                </ul> -->
+            </div>
+        </form>
+        </div>
+    </div>
+</body>
+</html>

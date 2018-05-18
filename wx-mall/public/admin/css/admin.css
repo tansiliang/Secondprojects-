@@ -1,0 +1,10 @@
+.table-bordered th,table tr td{
+    text-align:center;
+}
+.header_style_a{
+    color:white;
+}
+.header_style{
+    background: url(../images/left_bg.jpg) repeat-x;
+    color:white;
+}
